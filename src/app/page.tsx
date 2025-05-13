@@ -1,0 +1,13 @@
+import { auth } from '@clerk/nextjs/server';
+import { redirect } from 'next/navigation';
+
+export default async function Page() {
+  const { userId } = await auth();
+
+  if (!userId) {
+    // return redirect('/auth/sign-in');
+    return redirect('/dashboard/overview');
+  } else {
+    redirect('/dashboard/overview');
+  }
+}

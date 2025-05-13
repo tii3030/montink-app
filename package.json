@@ -1,9 +1,9 @@
 {
-  "name": "next-shadcn-dashboard-starter",
+  "name": "montink",
   "version": "1.0.0",
   "private": true,
   "author": {
-    "name": "Kiran",
+    "name": "Tiago",
     "url": "https://github.com/tii3030"
   },
   "scripts": {
