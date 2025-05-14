@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef } from 'react';
 import { useRouter } from 'next/navigation';
 import { DiscountBadge } from '@/components/discountBadge';
 import { MOCK_PRODUCTS } from '@/constants/mock-products';
@@ -8,40 +9,98 @@ import {
   CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle
 } from './ui/card';
 import { Product } from '@/types/products';
-import { v4 as uuidv4 } from 'uuid';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { Button } from './ui/button';
 
 export default function CarouselProducts() {
   const router = useRouter();
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const { current } = scrollRef;
+      const scrollAmount =
+        direction === 'left' ? -current.offsetWidth : current.offsetWidth;
+      current.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    }
+  };
 
   return (
-    <div className='*:data-[slot=card]:from-primary/5 *:data-[slot=card]:to-card dark:*:data-[slot=card]:bg-card grid grid-cols-1 gap-4 *:data-[slot=card]:bg-gradient-to-t *:data-[slot=card]:shadow-xs md:grid-cols-2 lg:grid-cols-4'>
-      {MOCK_PRODUCTS.map((item: Product, index: number) => (
-        <Card
-          key={uuidv4()}
-          className='@container/card w-full flex-1 cursor-pointer'
-          onClick={() => router.push(`/products/overview/${item.id}`)}
+    <div className='relative w-full'>
+      {/* Controles de navegação */}
+      <div className='absolute top-1/2 -left-4 z-10 hidden -translate-y-1/2 md:block'>
+        <Button
+          variant='outline'
+          size='icon'
+          onClick={() => scroll('left')}
+          className='bg-background/50 rounded-full backdrop-blur-sm'
         >
-          <CardHeader>
-            <CardTitle className='text-4xl font-semibold tabular-nums @[250px]/card:text-3xl'>
-              {item.name}
-            </CardTitle>
-            <CardDescription>{item.description}</CardDescription>
-            <CardAction>
-              <DiscountBadge
-                currentPrice={item.price}
-                oldPrice={item.old_price}
-              />
-            </CardAction>
-          </CardHeader>
-          <CardContent></CardContent>
-          <CardFooter className='flex-col items-start gap-1.5 text-sm'></CardFooter>
-        </Card>
-      ))}
+          <ChevronLeft className='h-4 w-4' />
+        </Button>
+      </div>
+
+      <div className='absolute top-1/2 -right-4 z-10 hidden -translate-y-1/2 md:block'>
+        <Button
+          variant='outline'
+          size='icon'
+          onClick={() => scroll('right')}
+          className='bg-background/50 rounded-full backdrop-blur-sm'
+        >
+          <ChevronRight className='h-4 w-4' />
+        </Button>
+      </div>
+
+      {/* Carrossel */}
+      <div
+        ref={scrollRef}
+        className='scrollbar-none flex w-full snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth py-4'
+      >
+        {MOCK_PRODUCTS.map((item: Product) => (
+          <div
+            key={item.id}
+            className='flex min-w-[300px] snap-start snap-always md:min-w-[350px]'
+          >
+            <Card
+              className='flex h-full w-full cursor-pointer flex-col transition-all hover:shadow-lg'
+              onClick={() => router.push(`/products/overview/${item.id}`)}
+            >
+              <div className='bg-muted relative aspect-video w-full'>
+                {/* Espaço para imagem */}
+              </div>
+              <CardHeader>
+                <CardTitle className='line-clamp-1 text-lg font-semibold'>
+                  {item.name}
+                </CardTitle>
+                <CardDescription className='line-clamp-2'>
+                  {item.description}
+                </CardDescription>
+              </CardHeader>
+              <CardContent className='flex-1'>
+                <div className='flex items-end justify-between'>
+                  <div className='space-y-1'>
+                    <p className='text-2xl font-bold'>R${item.price}</p>
+                    {item.old_price && (
+                      <p className='text-muted-foreground text-sm line-through'>
+                        R${item.old_price}
+                      </p>
+                    )}
+                  </div>
+                  <CardAction>
+                    <DiscountBadge
+                      currentPrice={item.price}
+                      oldPrice={item.old_price}
+                    />
+                  </CardAction>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
