@@ -156,3 +156,16 @@
   /* Apply the reveal animation */
   animation: reveal 0.4s ease-in-out forwards;
 }
+
+/* Esconde scrollbars para Webkit (Chrome, Safari, Edge) */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Esconde scrollbars no Firefox */
+.scrollbar-none {
+  scrollbar-width: none;
+  -ms-overflow-style: none; /* IE and Edge */
+  -webkit-overflow-scrolling: touch;
+}

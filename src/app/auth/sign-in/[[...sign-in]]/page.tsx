@@ -11,7 +11,7 @@ export default async function Page() {
 
   try {
     const response = await fetch(
-      'https://api.github.com/repos/tii3030/next-chadcn-starter',
+      'https://api.github.com/repos/tii3030/montink-app',
       {
         next: { revalidate: 86400 }
       }

@@ -97,3 +97,22 @@ export const getFiltersStateParser = <TData>(
       )
   });
 };
+
+const cepSchema = z.string().regex(/^\d{5}-\d{3}$/, {
+  message: 'CEP inválido! XXXXX-XXX'
+});
+
+export const getCepParser = () => {
+  return createParser({
+    parse: (value) => {
+      try {
+        cepSchema.parse(value);
+        return value;
+      } catch (error) {
+        return null;
+      }
+    },
+    serialize: (value) => value,
+    eq: (a, b) => a === b
+  });
+};

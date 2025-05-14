@@ -5,9 +5,8 @@ export default async function Page() {
   const { userId } = await auth();
 
   if (!userId) {
-    // return redirect('/auth/sign-in');
-    return redirect('/dashboard/overview');
+    return redirect('/auth/sign-in');
   } else {
-    redirect('/dashboard/overview');
+    redirect('/products/overview/1');
   }
 }
