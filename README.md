@@ -1,6 +1,6 @@
 # Montink - E-commerce Platform
 
-![Montink Banner](https://via.placeholder.com/1920x1080/1e293b/ffffff?text=Montink+E-commerce)  
+![Montink Banner](https://raw.githubusercontent.com/tii3030/montink-app/refs/heads/master/public/assets/Capture1.PNG)  
 
 ## 📌 Visão Geral
 
@@ -15,15 +15,15 @@ Montink é uma plataforma de e-commerce moderna construída com Next.js, oferece
 ## ✨ Demonstração
 
 ### Página de Produto
-![Página de Produto](https://via.placeholder.com/800x600/1e293b/ffffff?text=Product+Page)  
+![Página de Produto](https://raw.githubusercontent.com/tii3030/montink-app/refs/heads/master/public/assets/Capture2.PNG)  
 *Visualização do produto com carrossel de imagens e seletor de opções*
 
 ### Integração CEP
-![Busca por CEP](https://via.placeholder.com/800x400/1e293b/ffffff?text=CEP+Integration)  
+![Busca por CEP](https://raw.githubusercontent.com/tii3030/montink-app/refs/heads/master/public/assets/Capture3.PNG)  
 *Funcionalidade de busca de endereço via CEP*
 
 ### Carrossel de Produtos
-![Carrossel de Produtos](https://via.placeholder.com/800x400/1e293b/ffffff?text=Product+Carousel)  
+![Carrossel de Produtos](https://raw.githubusercontent.com/tii3030/montink-app/refs/heads/master/public/assets/Capture3.PNG)  
 *Carrossel responsivo de produtos relacionados*
 
 ## 🛠️ Tecnologias Principais
