@@ -11,8 +11,12 @@ import CepSearchInput from '@/components/cep-search-input';
 import ImageScroller from '@/components/image-scroller';
 import CarouselProducts from '@/components/carousel-products';
 
-export default async function Page({ params }: { params: { id: string } }) {
-  const { id } = params;
+interface ProductPageProps {
+  params: Promise<{ id: string }>;
+}
+
+export default async function Page({ params }: ProductPageProps) {
+  const { id } = await params;
   const productId = parseInt(id, 10);
   const product = MOCK_PRODUCTS.find((prod) => prod.id === productId);
 
