@@ -5,6 +5,7 @@ import { GitHubLogoIcon } from '@radix-ui/react-icons';
 import { IconStar } from '@tabler/icons-react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export const metadata: Metadata = {
   title: 'Authentication',
@@ -23,31 +24,24 @@ export default function SignInViewPage({ stars }: { stars: number }) {
       >
         Login
       </Link>
-      <div className='bg-muted relative hidden h-full flex-col p-10 text-white lg:flex dark:border-r'>
-        <div className='absolute inset-0 bg-zinc-900' />
+      <div className="relative hidden h-full w-full flex-col bg-[url('/assets/imgBackground.jpg')] bg-contain bg-center p-10 text-white lg:flex dark:border-r">
+        <div className='absolute inset-0 bg-black/50' />
         <div className='relative z-20 flex items-center text-lg font-medium'>
-          <svg
-            xmlns='http://www.w3.org/2000/svg'
-            viewBox='0 0 24 24'
-            fill='none'
-            stroke='currentColor'
-            strokeWidth='2'
-            strokeLinecap='round'
-            strokeLinejoin='round'
-            className='mr-2 h-6 w-6'
-          >
-            <path d='M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3' />
-          </svg>
-          Logo
+          <Image
+            width={200}
+            height={200}
+            src={'/assets/logo.png'}
+            alt={'Logo'}
+            className='object-cover'
+          />
         </div>
         <div className='relative z-20 mt-auto'>
           <blockquote className='space-y-2'>
             <p className='text-lg'>
-              &ldquo;This starter template has saved me countless hours of work
-              and helped me deliver projects to my clients faster than ever
-              before.&rdquo;
+              &ldquo;Este é um template desenvolvido por mim para iniciar
+              projetos ReactJs + NextJs.&rdquo;
             </p>
-            <footer className='text-sm'>Random Dude</footer>
+            <footer className='text-sm'>&ldquo;Tiago Pereira&rdquo;</footer>
           </blockquote>
         </div>
       </div>
@@ -57,11 +51,11 @@ export default function SignInViewPage({ stars }: { stars: number }) {
           <Link
             className={cn('group inline-flex hover:text-yellow-200')}
             target='_blank'
-            href={'https://github.com/kiranism/next-shadcn-dashboard-starter'}
+            href={'https://github.com/tii3030/montink-app'}
           >
             <div className='flex items-center'>
               <GitHubLogoIcon className='size-4' />
-              <span className='ml-1 inline'>Star on GitHub</span>{' '}
+              <span className='ml-1 inline'>Avaliações no GitHub</span>{' '}
             </div>
             <div className='ml-2 flex items-center gap-1 text-sm md:flex'>
               <IconStar
@@ -71,28 +65,23 @@ export default function SignInViewPage({ stars }: { stars: number }) {
               <span className='font-display font-medium'>{stars}</span>
             </div>
           </Link>
-          <ClerkSignInForm
-            initialValues={{
-              emailAddress: 'your_mail+clerk_test@example.com'
-            }}
-          />
+          <ClerkSignInForm />
 
           <p className='text-muted-foreground px-8 text-center text-sm'>
-            By clicking continue, you agree to our{' '}
+            Ao clicar em continuar, você concorda com nossos{' '}
             <Link
               href='/terms'
               className='hover:text-primary underline underline-offset-4'
             >
-              Terms of Service
+              Termos de Serviços
             </Link>{' '}
-            and{' '}
+            e{' '}
             <Link
               href='/privacy'
               className='hover:text-primary underline underline-offset-4'
             >
-              Privacy Policy
+              Políticas de Privacidade.
             </Link>
-            .
           </p>
         </div>
       </div>

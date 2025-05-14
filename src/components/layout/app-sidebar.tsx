@@ -1,4 +1,5 @@
 'use client';
+
 import {
   Collapsible,
   CollapsibleContent,
@@ -195,7 +196,7 @@ export default function AppSidebar() {
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
                   <IconLogout className='mr-2 h-4 w-4' />
-                  <SignOutButton redirectUrl='/auth/sign-in' />
+                  <SignOutButton redirectUrl='/sign-in' />
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
