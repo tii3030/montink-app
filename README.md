@@ -1,109 +1,140 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/9113740/201498864-2a900c64-d88f-4ed4-b5cf-770bcb57e1f5.png">
-  <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/9113740/201498152-b171abb8-9225-487a-821c-6ff49ee48579.png">
-</picture>
+# Montink - E-commerce Platform
 
-<div align="center"><strong>Next.js Admin Dashboard Starter Template With Shadcn-ui</strong></div>
-<div align="center">Built with the Next.js 15 App Router</div>
-<br />
-<div align="center">
-<a href="https://dub.sh/shadcn-dashboard">View Demo</a>
-<span>
-</div>
+![Montink Banner](https://via.placeholder.com/1920x1080/1e293b/ffffff?text=Montink+E-commerce)  
 
-## Overview
+## 📌 Visão Geral
 
-This is a starter template using the following stack:
+Montink é uma plataforma de e-commerce moderna construída com Next.js, oferecendo uma experiência de compra fluida com recursos avançados como:
 
-- Framework - [Next.js 15](https://nextjs.org/13)
-- Language - [TypeScript](https://www.typescriptlang.org)
-- Styling - [Tailwind CSS v4](https://tailwindcss.com)
-- Components - [Shadcn-ui](https://ui.shadcn.com)
-- Schema Validations - [Zod](https://zod.dev)
-- State Management - [Zustand](https://zustand-demo.pmnd.rs)
-- Search params state manager - [Nuqs](https://nuqs.47ng.com/)
-- Auth - [Clerk](https://go.clerk.com/ILdYhn7)
-- Tables - [Tanstack Data Tables](https://ui.shadcn.com/docs/components/data-table) • [Dice UI](https://www.diceui.com/docs/components/data-table)
-- Forms - [React Hook Form](https://ui.shadcn.com/docs/components/form)
-- Command+k interface - [kbar](https://kbar.vercel.app/)
-- Linting - [ESLint](https://eslint.org)
-- Pre-commit Hooks - [Husky](https://typicode.github.io/husky/)
-- Formatting - [Prettier](https://prettier.io)
+- Visualização detalhada de produtos
+- Integração com API de CEP
+- Carrosséis de imagens responsivos
+- Gerenciamento de acesso via Clerk
+- UI/UX cuidadosamente projetada
 
-_If you are looking for a React admin dashboard starter, here is the [repo](https://github.com/Kiranism/react-shadcn-dashboard-starter)._
+## ✨ Demonstração
 
-## Pages
+### Página de Produto
+![Página de Produto](https://via.placeholder.com/800x600/1e293b/ffffff?text=Product+Page)  
+*Visualização do produto com carrossel de imagens e seletor de opções*
 
-| Pages                                                                                 | Specifications                                                                                                                                                                                                                                                          |
-| :------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Signup / Signin](https://next-shadcn-dashboard-starter.vercel.app/auth/sign-up)      | Authentication with **Clerk** provides secure authentication and user management with multiple sign-in options including passwordless authentication, social logins, and enterprise SSO - all designed to enhance security while delivering a seamless user experience. |
-| [Dashboard (Overview)](https://next-shadcn-dashboard-starter.vercel.app/dashboard)    | Cards with recharts graphs for analytics.Parallel routes in the overview sections with independent loading, error handling, and isolated component rendering .                                                                                                          |
-| [Product](https://next-shadcn-dashboard-starter.vercel.app/dashboard/product)         | Tanstack tables with server side searching, filter, pagination by Nuqs which is a Type-safe search params state manager in nextjs                                                                                                                                       |
-| [Product/new](https://next-shadcn-dashboard-starter.vercel.app/dashboard/product/new) | A Product Form with shadcn form (react-hook-form + zod).                                                                                                                                                                                                                |
-| [Profile](https://next-shadcn-dashboard-starter.vercel.app/dashboard/profile)         | Clerk's full-featured account management UI that allows users to manage their profile and security settings                                                                                                                                                             |
-| [Kanban Board](https://next-shadcn-dashboard-starter.vercel.app/dashboard/kanban)     | A Drag n Drop task management board with dnd-kit and zustand to persist state locally.                                                                                                                                                                                  |
-| [Not Found](https://next-shadcn-dashboard-starter.vercel.app/dashboard/notfound)      | Not Found Page Added in the root level                                                                                                                                                                                                                                  |
-| -                                                                                     | -                                                                                                                                                                                                                                                                       |
+### Integração CEP
+![Busca por CEP](https://via.placeholder.com/800x400/1e293b/ffffff?text=CEP+Integration)  
+*Funcionalidade de busca de endereço via CEP*
 
-## Feature based organization
+### Carrossel de Produtos
+![Carrossel de Produtos](https://via.placeholder.com/800x400/1e293b/ffffff?text=Product+Carousel)  
+*Carrossel responsivo de produtos relacionados*
 
-```plaintext
+## 🛠️ Tecnologias Principais
+
+| Tecnologia | Descrição |
+|------------|-----------|
+| ![Next.js](https://img.shields.io/badge/Next.js-19-000000?logo=next.js) | Framework React para renderização híbrida |
+| ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react) | Biblioteca para construção de interfaces |
+| ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.3-06B6D4?logo=tailwind-css) | Framework CSS utilitário |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-5.2-3178C6?logo=typescript) | Superset JavaScript tipado |
+| ![Clerk](https://img.shields.io/badge/Clerk-6.19-000000?logo=clerk) | Autenticação e gerenciamento de usuários |
+| ![Zustand](https://img.shields.io/badge/Zustand-5.0-000000) | Gerenciamento de estado |
+| ![React Hook Form](https://img.shields.io/badge/React_Hook_Form-7.56-EC5990?logo=react-hook-form) | Manipulação de formulários |
+
+## 🚀 Funcionalidades
+
+### Principais
+- **Visualização de Produto Avançada**
+  - Carrossel de imagens interativo
+  - Zoom e troca de imagem principal
+  - Detalhes completos do produto
+
+- **Integração com ViaCEP**
+  - Busca automática de endereço
+  - Validação de CEP
+  - Exibição de informações de entrega
+
+- **UI Responsiva**
+  - Layout adaptável para todos dispositivos
+  - Transições suaves e animações
+  - Design system consistente
+
+### Em Desenvolvimento
+- [ ] Painel administrativo
+- [ ] Cadastro de produtos
+- [ ] Catálogo completo
+- [ ] Sistema de pedidos
+- [ ] Integração com pagamentos
+
+## 🏗️ Estrutura do Projeto
+
+```bash
 src/
-├── app/ # Next.js App Router directory
-│ ├── (auth)/ # Auth route group
-│ │ ├── (signin)/
-│ ├── (dashboard)/ # Dashboard route group
-│ │ ├── layout.tsx
-│ │ ├── loading.tsx
-│ │ └── page.tsx
-│ └── api/ # API routes
-│
-├── components/ # Shared components
-│ ├── ui/ # UI components (buttons, inputs, etc.)
-│ └── layout/ # Layout components (header, sidebar, etc.)
-│
-├── features/ # Feature-based modules
-│ ├── feature/
-│ │ ├── components/ # Feature-specific components
-│ │ ├── actions/ # Server actions
-│ │ ├── schemas/ # Form validation schemas
-│ │ └── utils/ # Feature-specific utilities
-│ │
-├── lib/ # Core utilities and configurations
-│ ├── auth/ # Auth configuration
-│ ├── db/ # Database utilities
-│ └── utils/ # Shared utilities
-│
-├── hooks/ # Custom hooks
-│ └── use-debounce.ts
-│
-├── stores/ # Zustand stores
-│ └── dashboard-store.ts
-│
-└── types/ # TypeScript types
-└── index.ts
+├── app/                   # Rotas da aplicação
+├── components/            # Componentes reutilizáveis
+│   ├── ui/                # Componentes de UI primitivos
+│   ├── product/           # Componentes específicos de produto
+│   └── ...                # Outros componentes
+├── constants/             # Dados estáticos e mockados
+├── lib/                   # Utilitários e helpers
+├── types/                 # Tipos TypeScript
+└── styles/                # Estilos globais
 ```
 
-## Getting Started
+## � Como Executar Localmente
 
-> [!NOTE]  
-> We are using **Next 15** with **React 19**, follow these steps:
+1. **Clone o repositório**
+   ```bash
+   git clone https://github.com/tii3030/montink.git
+   cd montink
+   ```
 
-Clone the repo:
+2. **Instale as dependências**
+   ```bash
+   pnpm install
+   ```
 
-```
-git clone https://github.com/Kiranism/next-shadcn-dashboard-starter.git
-```
+3. **Configure as variáveis de ambiente**
+   Crie um arquivo `.env` baseado no `.env.example` e adicione suas chaves de API.
 
-- `pnpm install` ( we have legacy-peer-deps=true added in the .npmrc)
-- Create a `.env.local` file by copying the example environment file:
-  `cp env.example.txt .env.local`
-- Add the required environment variables to the `.env.local` file.
-- `pnpm run dev`
+4. **Inicie o servidor de desenvolvimento**
+   ```bash
+   pnpm dev
+   ```
 
-You should now be able to access the application at http://localhost:3000.
+5. **Acesse no navegador**
+   ```
+   http://localhost:3000
+   ```
 
-> [!WARNING]
-> After cloning or forking the repository, be cautious when pulling or syncing with the latest changes, as this may result in breaking conflicts.
+## 🛠️ Scripts Úteis
 
-Cheers! 🥂
+| Comando | Descrição |
+|---------|-----------|
+| `pnpm dev` | Inicia servidor de desenvolvimento |
+| `pnpm build` | Gera build para produção |
+| `pnpm start` | Inicia servidor de produção |
+| `pnpm lint` | Executa análise estática do código |
+| `pnpm format` | Formata o código automaticamente |
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Siga estes passos:
+
+1. Faça um fork do projeto
+2. Crie uma branch (`git checkout -b feature/AmazingFeature`)
+3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
+4. Push para a branch (`git push origin feature/AmazingFeature`)
+5. Abra um Pull Request
+
+## 📄 Licença
+
+Distribuído sob a licença MIT. Veja `LICENSE` para mais informações.
+
+## ✉️ Contato
+
+Tiago - [@tii3030](https://github.com/tii3030)  
+Projeto: [https://github.com/tii3030/montink](https://github.com/tii3030/montink)
+
+---
+
+<div align="center">
+  <sub>Feito com ❤️ por Tiago | Seja livre para usar e modificar</sub>
+</div>
