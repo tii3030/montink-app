@@ -3,8 +3,8 @@
 import { StarFilledIcon, StarIcon } from '@radix-ui/react-icons';
 
 type RatingProps = {
-  value: number; // nota, ex: 4
-  max?: number; // valor máximo (default 5)
+  value: number;
+  max?: number;
   size?: 'sm' | 'md' | 'lg';
 };
 

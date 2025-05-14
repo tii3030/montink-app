@@ -7,6 +7,6 @@ export default async function ProductsView() {
   if (!userId) {
     return redirect('/auth/sign-in');
   } else {
-    redirect('/products/overview');
+    redirect('/products/overview/1');
   }
 }
