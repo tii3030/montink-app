@@ -1,4 +1,4 @@
-import { Product } from '@/constants/data';
+import { Product } from '@/types/products';
 import { fakeProducts } from '@/constants/mock-api';
 import { searchParamsCache } from '@/lib/searchparams';
 import { ProductTable } from './product-tables';

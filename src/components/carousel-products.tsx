@@ -12,7 +12,7 @@ import {
   CardHeader,
   CardTitle
 } from './ui/card';
-import { Product } from '@/constants/data';
+import { Product } from '@/types/products';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function CarouselProducts() {
@@ -23,7 +23,7 @@ export default function CarouselProducts() {
       {MOCK_PRODUCTS.map((item: Product, index: number) => (
         <Card
           key={uuidv4()}
-          className='@container/card cursor-pointer'
+          className='@container/card w-full flex-1 cursor-pointer'
           onClick={() => router.push(`/products/overview/${item.id}`)}
         >
           <CardHeader>

@@ -79,14 +79,14 @@ export default function ImageScroller({ images }: { images: UnsplashImage[] }) {
 
         <div
           ref={scrollRef}
-          className='scrollbar-none flex flex-1 flex-row flex-wrap space-x-2 overflow-y-auto rounded-xl pr-1 lg:flex-col lg:space-y-2 lg:space-x-0'
+          className='scrollbar-none flex flex-1 flex-row flex-nowrap space-x-2 overflow-y-auto rounded-xl pr-1 lg:flex-col lg:space-y-2 lg:space-x-0'
         >
           {images.map((img: UnsplashImage) => (
             <Card
               key={uuidv4()}
               onClick={() => setSelectedImage(img)}
               className={cn(
-                'relative aspect-square flex-1 cursor-pointer overflow-hidden',
+                'relative aspect-square max-h-full min-h-36 max-w-full min-w-36 flex-1 cursor-pointer overflow-hidden',
                 selectedImage.urls.regular === img.urls.regular && 'shadow-2xs'
               )}
             >
