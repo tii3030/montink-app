@@ -15,7 +15,7 @@ interface ProductPageProps {
   params: { id: string };
 }
 
-export default async function product({ params }: ProductPageProps) {
+export default async function Page({ params }: ProductPageProps) {
   const { id } = params;
   const productId = parseInt(id, 10);
   const product = MOCK_PRODUCTS.find((prod) => prod.id === productId);
