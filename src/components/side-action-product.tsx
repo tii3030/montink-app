@@ -3,43 +3,26 @@ import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { Separator } from './ui/separator';
 import { Card } from './ui/card';
+import CepSearchInput from './cep-search-input';
 
 export function ProductCheckout() {
   return (
     <div className='flex flex-1'>
       <Card className='p-6 lg:p-10'>
         {/* Entrega */}
-        <div className='mb-4'>
+        <CepSearchInput />
+        <div>
           <div className='mb-1 flex items-center gap-2 text-green-600'>
             <TruckIcon className='h-5 w-5' />
             <p className='font-medium'>Chegará grátis sexta-feira</p>
           </div>
-          <button className='text-sm text-blue-600 hover:underline'>
-            Mais formas de entrega
-          </button>
-        </div>
-
-        {/* Estoque */}
-        <div className='mb-4'>
-          <p className='mb-1 text-sm text-green-600'>Estoque disponível</p>
-          <p className='text-sm text-gray-600'>
-            Armazenado e enviado pelo <span className='font-medium'>Full</span>
-          </p>
-        </div>
-
-        {/* Quantidade */}
-        <div className='mb-4'>
-          <p className='text-sm text-gray-600'>
-            Você pode comprar até{' '}
-            <span className='font-medium'>2 unidades</span>
-          </p>
         </div>
 
         {/* Vendedor */}
         <div className='mb-4'>
           <div className='mb-1 flex items-center gap-2'>
             <Badge variant='outline' className='text-xs'>
-              Vikings
+              Montink
             </Badge>
             <span className='text-xs text-gray-500'>+500mil vendas</span>
           </div>

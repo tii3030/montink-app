@@ -5,6 +5,16 @@ import { SizeSelector } from './sizeSelector';
 import Rating from './rating';
 import { DiscountBadge } from './discountBadge';
 import { Product } from '@/constants/data';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectSeparator,
+  SelectTrigger,
+  SelectValue
+} from '@/components/ui/select';
 
 type InfoProps = {
   product: Product;
@@ -31,12 +41,36 @@ export function ProductInfo({ product }: InfoProps) {
         <div>
           <p>{product.description}.</p>
         </div>
+        <span className='mb-0 text-sm text-green-600'>Estoque disponível</span>
+        {/* <span className='text-sm text-red-600 mt-0'>Estoque indisponível</span> */}
+
         <hr className='my-2 border-t border-gray-200' />
         <ColorSelector colors={product.colors} />
         <hr className='my-2 border-t border-gray-200' />
         <SizeSelector sizes={product.sizes} />
         <hr className='my-2 border-t border-gray-200' />
-        <CepSearchInput />
+        {/* Quantidade */}
+        <div className='mb-4'>
+          <p className='text-sm text-gray-600'>
+            Você pode comprar até{' '}
+            <span className='font-medium'>2 unidades.</span>
+          </p>
+          <label className='text-sm font-medium'>Selecione a quantidade:</label>
+          <Select>
+            <SelectTrigger className='mt-3 rounded border p-2'>
+              <SelectValue placeholder='Selecione...' />
+            </SelectTrigger>
+
+            <SelectContent className='rounded border bg-white shadow-lg'>
+              <SelectItem value='op1' className='p-2 hover:bg-gray-100'>
+                1
+              </SelectItem>
+              <SelectItem value='op2' className='p-2 hover:bg-gray-100'>
+                2
+              </SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
       </Card>
     </div>
   );

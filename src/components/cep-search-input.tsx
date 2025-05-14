@@ -81,18 +81,12 @@ export default function CepSearchInput() {
       {/* DISPLAY DATA ADDRESS */}
       {address && (
         <div className='mt-4'>
-          <p>
-            <strong>Logradouro:</strong> {address.logradouro}
+          <p className='text-sm font-medium'>
+            Logradouro: {address.logradouro}
           </p>
-          <p>
-            <strong>Bairro:</strong> {address.bairro}
-          </p>
-          <p>
-            <strong>Cidade:</strong> {address.localidade}
-          </p>
-          <p>
-            <strong>Estado:</strong> {address.uf}
-          </p>
+          <p className='text-sm font-medium'>Bairro: {address.bairro}</p>
+          <p className='text-sm font-medium'>Cidade: {address.localidade}</p>
+          <p className='text-sm font-medium'>Estado: {address.uf}</p>
         </div>
       )}
     </div>
