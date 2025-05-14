@@ -39,7 +39,7 @@ export const navItems: NavItem[] = [
     items: [
       {
         title: 'Overview',
-        url: '/products/overview',
+        url: '/products/overview/1',
         icon: 'userPen',
         shortcut: ['m', 'm']
       },
