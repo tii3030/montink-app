@@ -24,13 +24,13 @@ export default function SignInViewPage({ stars }: { stars: number }) {
       >
         Login
       </Link>
-      <div className="relative hidden h-full w-full flex-col bg-[url('/assets/imgBackground.jpg')] bg-contain bg-center p-10 text-white lg:flex dark:border-r">
+      <div className="relative hidden h-full w-full flex-col bg-[url('/assets/bg-img.png')] bg-contain bg-center p-10 text-white lg:flex dark:border-r">
         <div className='absolute inset-0 bg-black/50' />
         <div className='relative z-20 flex items-center text-lg font-medium'>
           <Image
             width={200}
             height={200}
-            src={'/assets/logo.png'}
+            src={'/assets/logo-white.png'}
             alt={'Logo'}
             className='object-cover'
           />
