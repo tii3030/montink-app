@@ -61,11 +61,11 @@ export function ProductInfo({ product }: InfoProps) {
               <SelectValue placeholder='Selecione...' />
             </SelectTrigger>
 
-            <SelectContent className='rounded border bg-white shadow-lg'>
-              <SelectItem value='op1' className='p-2 hover:bg-gray-100'>
+            <SelectContent className='rounded border shadow-lg'>
+              <SelectItem value='op1' className='p-2'>
                 1
               </SelectItem>
-              <SelectItem value='op2' className='p-2 hover:bg-gray-100'>
+              <SelectItem value='op2' className='p-2'>
                 2
               </SelectItem>
             </SelectContent>
