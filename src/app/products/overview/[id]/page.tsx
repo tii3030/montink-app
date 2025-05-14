@@ -10,6 +10,8 @@ import OverviewError from './error';
 import CepSearchInput from '@/components/cep-search-input';
 import ImageScroller from '@/components/image-scroller';
 import CarouselProducts from '@/components/carousel-products';
+import { ProductCheckout } from '@/components/side-action-product';
+import { ProductInfo } from '@/components/info-product';
 
 interface ProductPageProps {
   params: Promise<{ id: string }>;
@@ -45,44 +47,21 @@ export default async function Page({ params }: ProductPageProps) {
   return (
     <PageContainer scrollable>
       <div className='relative mx-10 flex w-full flex-col space-y-2 overflow-hidden lg:flex-1'>
-        <div className='flex flex-1 flex-col space-y-2 lg:max-h-[689px] lg:flex-row lg:space-y-0 lg:space-x-2'>
+        <div className='flex flex-1 flex-col space-y-2 lg:max-h-[750px] lg:flex-row lg:space-y-0 lg:space-x-2'>
           {/* IMAGES CONTAINER E MAIN IMAGE */}
           <ImageScroller images={images} />
 
           {/* PRODUCT INFO CONTAINER */}
-          <div className='flex flex-1'>
-            <Card className='h-full w-full p-6 lg:p-10'>
-              <h1 className='text-3xl font-bold tracking-tight'>
-                {product.name}
-              </h1>
-              <Rating value={4} />
-              <div className='flex flex-row items-center space-x-3'>
-                <span className='text-2xl font-bold tracking-tight'>
-                  R${product.price}
-                </span>
-                <span className='font-bol text-muted-foreground text-2xl tracking-tight line-through'>
-                  R${product.old_price}
-                </span>
-                <DiscountBadge
-                  currentPrice={product.price}
-                  oldPrice={product.old_price}
-                />
-              </div>
-              <div>
-                <p>{product.description}.</p>
-              </div>
-              <hr className='my-2 border-t border-gray-200' />
-              <ColorSelector colors={product.colors} />
-              <hr className='my-2 border-t border-gray-200' />
-              <SizeSelector sizes={product.sizes} />
-              <hr className='my-2 border-t border-gray-200' />
-              <CepSearchInput />
-            </Card>
-          </div>
+          <ProductInfo product={product} />
+
+          {/* ADD TO CART CONTAINER */}
+          <ProductCheckout />
         </div>
 
         {/* CAROUSEL MORE PRODUCTS */}
-        <CarouselProducts />
+        <div className='flex flex-1'>
+          <CarouselProducts />
+        </div>
       </div>
     </PageContainer>
   );

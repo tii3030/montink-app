@@ -51,7 +51,7 @@ export default function CepSearchInput() {
   };
 
   return (
-    <div className='w-full space-y-2 xl:w-1/2'>
+    <div className='w-full space-y-2'>
       <label className='text-sm font-medium'>Calcule o seu frete:</label>
 
       {/* INPUT CEP */}
