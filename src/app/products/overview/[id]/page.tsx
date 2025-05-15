@@ -1,13 +1,7 @@
 import PageContainer from '@/components/layout/page-container';
-import { Card } from '@/components/ui/card';
 import React from 'react';
-import Rating from '@/components/rating';
-import { ColorSelector } from '@/components/colorSelector';
-import { SizeSelector } from '@/components/sizeSelector';
-import { DiscountBadge } from '@/components/discountBadge';
 import { MOCK_PRODUCTS } from '@/constants/mock-products';
 import OverviewError from './error';
-import CepSearchInput from '@/components/cep-search-input';
 import ImageScroller from '@/components/image-scroller';
 import CarouselProducts from '@/components/carousel-products';
 import { ProductCheckout } from '@/components/side-action-product';
@@ -60,7 +54,7 @@ export default async function Page({ params }: ProductPageProps) {
 
         {/* CAROUSEL MORE PRODUCTS */}
         <div className='flex flex-1'>
-          <CarouselProducts />
+          <CarouselProducts images={images} />
         </div>
       </div>
     </PageContainer>
