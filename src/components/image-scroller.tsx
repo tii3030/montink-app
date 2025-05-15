@@ -38,7 +38,7 @@ export default function ImageScroller({ images }: { images: UnsplashImage[] }) {
   };
 
   return (
-    <div className='flex flex-2 flex-col lg:flex-row lg:space-x-1'>
+    <div className='flex flex-1 flex-col lg:flex-row lg:space-x-1'>
       {/* CAROUSEL IMAGES */}
       <div className='relative order-2 flex flex-1 lg:order-1'>
         {/* Botões MOBILE — esquerda e direita */}

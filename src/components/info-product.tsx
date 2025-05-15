@@ -22,7 +22,7 @@ type InfoProps = {
 
 export function ProductInfo({ product }: InfoProps) {
   return (
-    <div className='flex flex-1'>
+    <div className='flex min-w-[362px] flex-1'>
       <Card className='h-full w-full p-6 lg:p-10'>
         <h1 className='text-3xl font-bold tracking-tight'>{product.name}</h1>
         <Rating value={4} />

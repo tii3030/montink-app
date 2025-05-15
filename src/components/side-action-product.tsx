@@ -7,8 +7,8 @@ import CepSearchInput from './cep-search-input';
 
 export function ProductCheckout() {
   return (
-    <div className='flex flex-1'>
-      <Card className='p-6 lg:p-10'>
+    <div className='flex min-w-[362px] flex-1'>
+      <Card className='h-full w-full p-6 lg:p-10'>
         {/* Entrega */}
         <CepSearchInput />
         <div>

@@ -46,7 +46,7 @@ export default async function Page({ params }: ProductPageProps) {
 
   return (
     <PageContainer scrollable>
-      <div className='relative flex w-full flex-col space-y-2 overflow-hidden lg:mx-10 lg:flex-1'>
+      <div className='relative flex w-full flex-col space-y-2 overflow-hidden lg:flex-1'>
         <div className='flex flex-1 flex-col space-y-2 lg:max-h-[785px] lg:flex-row lg:space-y-0 lg:space-x-2'>
           {/* IMAGES CONTAINER E MAIN IMAGE */}
           <ImageScroller images={images} />
